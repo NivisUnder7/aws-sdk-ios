@@ -1172,9 +1172,9 @@ withPresentingViewController:(UIViewController *)presentingViewController {
     NSArray *pieces = [self.tokenString componentsSeparatedByString:@"."];
     if(pieces.count > 2){
         NSString * claims = pieces[1];
-        claims = [str stringByReplacingOccurrencesOfString:@"-"
+        claims = [claims stringByReplacingOccurrencesOfString:@"-"
                                                 withString:@"+"];
-        claims = [str stringByReplacingOccurrencesOfString:@"_"
+        claims = [claims stringByReplacingOccurrencesOfString:@"_"
                                                 withString:@"/"];
         //JWT is not padded with =, pad it if necessary
         NSUInteger paddedLength = claims.length + (4 - (claims.length % 4)) % 4;;
